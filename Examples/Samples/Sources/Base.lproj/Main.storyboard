@@ -390,14 +390,23 @@
                                     <constraint firstAttribute="height" constant="44" id="DQJ-cY-cKx"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5r-jU-haj">
+                                <rect key="frame" x="169" y="149" width="38" height="35"/>
+                                <state key="normal" title="Show"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="YC8-ae-15L" eventType="touchUpInside" id="Mi1-o6-TWt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="c5r-jU-haj" firstAttribute="centerX" secondItem="g7l-kO-y7q" secondAttribute="centerX" id="0uN-Tz-hRB"/>
                             <constraint firstItem="noi-1a-5bZ" firstAttribute="top" secondItem="g7l-kO-y7q" secondAttribute="top" constant="12" id="EQy-cr-F2Y"/>
                             <constraint firstItem="8yw-OC-Ubk" firstAttribute="bottom" secondItem="g7l-kO-y7q" secondAttribute="bottom" id="JOL-wC-w74"/>
                             <constraint firstItem="8yw-OC-Ubk" firstAttribute="leading" secondItem="tAi-nk-rDB" secondAttribute="leading" id="RiJ-Hb-OOZ"/>
                             <constraint firstItem="8yw-OC-Ubk" firstAttribute="trailing" secondItem="tAi-nk-rDB" secondAttribute="trailing" id="Sof-yL-mwK"/>
+                            <constraint firstItem="c5r-jU-haj" firstAttribute="top" secondItem="tAi-nk-rDB" secondAttribute="top" constant="129" id="c4E-5s-bCF"/>
                             <constraint firstItem="Kva-Z7-0qY" firstAttribute="trailing" secondItem="tAi-nk-rDB" secondAttribute="trailing" id="kkp-Yo-FQW"/>
                             <constraint firstItem="tAi-nk-rDB" firstAttribute="trailing" secondItem="noi-1a-5bZ" secondAttribute="trailing" constant="12" id="lv9-Nf-HNB"/>
                             <constraint firstItem="Kva-Z7-0qY" firstAttribute="leading" secondItem="tAi-nk-rDB" secondAttribute="leading" id="oVC-i1-TwS"/>
@@ -413,6 +422,7 @@
                     <size key="freeformSize" width="375" height="778"/>
                     <connections>
                         <outlet property="closeButton" destination="noi-1a-5bZ" id="eWQ-ha-8y7"/>
+                        <segue destination="bYI-y3-Rzb" kind="show" identifier="ShowSegue" id="r1P-2i-NDe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wqk-xl-O3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -432,7 +442,35 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1442" y="-23"/>
+            <point key="canvasLocation" x="1440.8" y="-23.388305847076463"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="3cS-Hp-5tb">
+            <objects>
+                <tableViewController storyboardIdentifier="TableViewController" id="fbO-Wp-Qe3" customClass="TableViewController" customModule="Samples" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Biy-bY-Ddd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eZw-Gg-Uyq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZw-Gg-Uyq" id="VH6-C4-Zut">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fbO-Wp-Qe3" id="pvq-8j-eNC"/>
+                            <outlet property="delegate" destination="fbO-Wp-Qe3" id="0SD-od-gCE"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0h-ap-vhT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2215" y="-229"/>
         </scene>
         <!--Debug Text View Controller-->
         <scene sceneID="Bkq-O7-q4A">
